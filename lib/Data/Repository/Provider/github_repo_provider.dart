@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../Server/github_repo_api.dart';
 import '../../Models/github_repo_model.dart';
 
-
 GithubRepoProvider githubRepoProvider = GithubRepoProvider();
 
 class GithubRepoProvider extends ChangeNotifier {
@@ -23,6 +22,13 @@ class GithubRepoProvider extends ChangeNotifier {
       log("message${onError.toString()}");
       _gitRepo = [];
     });
+    notifyListeners();
+
+    log("_gitRepo${_gitRepo.length}");
+  }
+
+  Future getGithubLastCommit() async {
+    await GithubRepoApi.githubLastCommit().then((onValue) {});
     notifyListeners();
 
     log("_gitRepo${_gitRepo.length}");
