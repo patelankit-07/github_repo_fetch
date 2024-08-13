@@ -23,7 +23,6 @@ class _GithubRepoState extends State<GithubRepo> {
   Widget build(BuildContext context) {
     GithubRepoProvider githubRepoProvider =
         Provider.of<GithubRepoProvider>(context);
-    log("message${githubRepoProvider.gitRepoData}");
 
     return Scaffold(
       appBar: AppBar(
